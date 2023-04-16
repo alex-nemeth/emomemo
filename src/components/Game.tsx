@@ -8,7 +8,7 @@ export default function Game({ onPress }: GameProps) {
         const shuffledData = shuffleArray(data);
         return shuffledData.map((image) => (
             <div
-                className="flex flex-wrap items-center max-h-35 rounded-lg bg-slate-400"
+                className="flex flex-wrap items-center max-h-33 rounded-lg bg-slate-400 hover:cursor-pointer"
                 onClick={() => onPress(image.name)}
                 id={image.name}
             >
