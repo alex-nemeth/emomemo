@@ -1,10 +1,12 @@
 import React from "react";
 import data from "../data/cardData";
 import { GameProps } from "../interfaces/Props";
+import { shuffleArray } from "../utils/shuffleArray";
 
 export default function Game({ onPress }: GameProps) {
     function renderCards() {
-        return data.map((image) => (
+        const shuffledData = shuffleArray(data);
+        return shuffledData.map((image) => (
             <div
                 className="flex flex-wrap items-center max-h-35 rounded-lg bg-slate-400"
                 onClick={() => onPress(image.name)}

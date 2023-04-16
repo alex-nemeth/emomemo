@@ -20,7 +20,9 @@ export default function App() {
             incrementScore();
             console.log(score);
         } else {
-            alert(`${image} was clicked twice! You have to start over.`);
+            alert(
+                `${image} was clicked twice! You lost with a score of ${score}.`
+            );
             setScore(0);
             setClicked([]);
         }
