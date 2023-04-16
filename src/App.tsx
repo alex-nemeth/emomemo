@@ -1,14 +1,18 @@
 import { useState } from "react";
 import Header from "./components/Header";
+import Game from "./components/Game";
 
-function App() {
-    const [count, setCount] = useState(0);
+export default function App() {
+    const [score, setScore] = useState(0);
+
+    function incrementScore(): void {
+        setScore((prevScore) => prevScore + 1);
+    }
 
     return (
         <>
-            <Header />
+            <Header score={score} />
+            <Game onPress={() => incrementScore()} />
         </>
     );
 }
-
-export default App;
